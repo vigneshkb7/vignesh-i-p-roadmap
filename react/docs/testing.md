@@ -9,8 +9,8 @@
 
 Types of test
 
-- unit testing
-- integration testing how multipel units works together
+- unit testing ### jest
+- integration testing how multipel units works together ###cypress
 - e2e tests
 
 1. Shallow rendering
@@ -20,3 +20,19 @@ Types of test
 2. Jest includes snapshot testing
    - a way to freeze a component
    - test fails if there are any changes
+
+### Tools
+
+Tools to remove data-test attributes in react app.
+
+`babel-plugin-react-remove-properties` used to remove data-test attribute in the prod environment
+
+{
+"env": {
+"production": {
+"plugins": [
+["react-remove-properties", {"properties": ["data-test", "data-foo", /my-suffix-expression$/]}]
+]
+}
+}
+}
