@@ -18,3 +18,19 @@
 - use css animations instead of js animations
 - using CDN for image videos
 - consider SSR
+
+### default props
+
+```
+// Functional component
+function CatComponent(props) {
+    return <div>{props.catName} Cat, Eye Color: {props.eyeColor}, Age: {props.age}</div>
+}
+CatComponent.defaultProps = {
+    catName: "Sandy",
+    eyeColor: "deepblue",
+    age: "120"
+}
+```
+
+- When you want to access this.props in constructor()
