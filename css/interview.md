@@ -170,3 +170,91 @@ outline-offset property adds space between an outline and the edge/border of an 
 outline-offset: 15px;
 
 # css text
+
+color of the text
+
+- color: blue;
+
+- The text-align property is used to set the horizontal alignment of a text.
+
+- text-align: left (or) right (or) center
+
+- The vertical-align property sets the vertical alignment of an element.
+
+- text-decoration property is used to set or remove decorations from text.
+
+- text-transform property is used to specify uppercase and lowercase letters in a text.
+
+- text-indent property is used to specify the indentation of the first line of a text. example starting of a paragraph with 50px
+
+- letter-spacing property is used to specify the space between the characters in a text.
+
+- line-height property is used to specify the space between lines:
+
+- word-spacing property is used to specify the space between the words in a text.
+
+- white-space property specifies how white-space inside an element is handled.
+
+- text-shadow property adds shadow to text.
+
+# css font
+
+-font family of a text is set with the font-family property.
+
+-font-style property is mostly used to specify italic text.
+
+    This property has three values:
+
+    normal - The text is shown normally
+    italic - The text is shown in italics
+    oblique - The text is "leaning" (oblique is very similar to italic, but less supported)
+
+# css links
+
+```
+a {
+  color: hotpink;
+}
+```
+
+The four links states are:
+
+a:link - a normal, unvisited link
+a:visited - a link the user has visited
+a:hover - a link when the user mouses over it
+a:active - a link the moment it is clicked
+
+# css lists
+
+list-style-type property specifies the type of list item marker.
+
+- circle
+- square
+- upper-roman
+- lower-alpha
+
+list-style-image property specifies an image as the list item marker:
+
+```
+list-style-image: url('sqpurple.gif');
+```
+
+list-style-position has outside and inside
+
+# css display
+
+display specifies how element to be displayed
+
+display: block, inline
+
+_visibility:hidden; also hides an element. but will take up the space_
+
+# css specificity
+
+Inline styles - An inline style is attached directly to the element to be styled. Example: <h1 style="color: #ffffff;">.
+
+IDs - An ID is a unique identifier for the page elements, such as #navbar.
+
+Classes, attributes and pseudo-classes - This category includes .classes, [attributes] and pseudo-classes such as :hover, :focus etc.
+
+Elements and pseudo-elements - This category includes element names and pseudo-elements, such as h1, div, :before and :after.
