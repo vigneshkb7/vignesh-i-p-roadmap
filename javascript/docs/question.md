@@ -35,3 +35,5 @@ let unique = [...new Set([1,2,3,4,4,5,"school","ball","ball"])]
 array.slice(-1)
 
 ```
+
+7. How to check the online status of the browser ?
