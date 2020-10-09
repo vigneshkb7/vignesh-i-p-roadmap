@@ -37,3 +37,15 @@ array.slice(-1)
 ```
 
 7. How to check the online status of the browser ?
+
+window.navigator object contains info about the visitors browser
+
+navigator.online ===> gives wether we are online of not
+navigator.language ===> returns the language property
+navigator.platform ==> returns the operating system
+
+8. where browser cookies are stored.
+
+A cookie information stores on your compouter by a website you visit.
+
+9. how to maintain state in http as http is a stateless protocol ?
