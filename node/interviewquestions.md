@@ -75,3 +75,5 @@ function isConnected() {
 
 isConnected().then(console.log);
 ```
+
+3. process in node js
