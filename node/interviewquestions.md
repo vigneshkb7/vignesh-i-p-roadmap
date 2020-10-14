@@ -77,3 +77,7 @@ isConnected().then(console.log);
 ```
 
 3. process in node js
+
+4. web scrawling or scraping in node js
+
+it the process of hitting url and getting the html document body to process some information from the server side.
