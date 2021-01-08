@@ -49,3 +49,11 @@ navigator.platform ==> returns the operating system
 A cookie information stores on your compouter by a website you visit.
 
 9. how to maintain state in http as http is a stateless protocol ?
+
+10. Default exports ==> default exports are useful to export only a single object, function,variables. we can use any name to import.
+
+11. Named exports ==> named exports are useful to export several values.
+
+12. using named and default exports at same time
+
+export { fun as default,x,y,square}
