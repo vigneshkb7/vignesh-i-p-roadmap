@@ -49,10 +49,39 @@ function someother(){
 
 var will behave as global scope inside the _block_ statements
 
+var will behave as local scope inside the _function_ statement
+
 block statements like if and switch for while
 
 if{
 
+}
+
+## context
+
+context always refers to `this` in some particular part of the code
+
+## Execution context
+
+single javascript is single threaded it queues all the tasks required in the Execution context
+
+there are 2 phases in exectution context
+
+1. creation phase
+2. code execution
+
+## creation phase
+
+creation of the variables (activation) object
+creation of the scope chain
+setting of the value of context(this)
+
+variable object ==> contains all the variable and functions
+scope chain ==> is used to resolve the variables
+context ==> {
+'scoepChain':{},
+'variableObject':{},
+'this':valueOfThis
 }
 
 ## Lexical scope
