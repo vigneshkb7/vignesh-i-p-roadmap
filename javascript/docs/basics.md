@@ -101,3 +101,23 @@ IIFE created self invoking function
 # context in javascript
 
 context is used to refer to the value of this in some particular part of your code
+
+# Module systems in JS
+
+1. common JS
+
+import is done via "require"
+
+export via "module.exports"
+
+2. AMD:
+
+require JS --> used for client side browser when you want dynamic loadinf of modules
+
+import via require
+
+3. UMD
+
+combination of commonJS + AMD
+
+4. ES6
