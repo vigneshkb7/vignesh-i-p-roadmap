@@ -36,7 +36,7 @@ scope is the accessibility of variables,function and objects in some part of cod
 - global scope
 - local scope
 
-let and const are block scoped
+# let and const are block scoped
 
 // global scope
 
