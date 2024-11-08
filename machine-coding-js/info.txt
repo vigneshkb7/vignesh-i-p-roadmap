@@ -1,0 +1,15 @@
+Both the functions are used to control the frequency of function execution in response to events
+
+
+Throttle
+---------
+
+Throttle ensures that a function is called at most once in aspecific time period regradless of how many times the triggering event occurs
+
+// scroll and resizing the windows
+
+Debounce
+------
+Ensures the functionis called after a specific time has passed since last invoked
+
+// search
