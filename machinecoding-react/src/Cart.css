@@ -1,0 +1,86 @@
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 16px;
+  }
+  
+  h2, h3 {
+    text-align: center;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .grid-item {
+    background: #f4f4f4;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .grid-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .add-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  .add-btn:hover {
+    background: #0056b3;
+  }
+  
+  .cart {
+    background: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .cart li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .cart button {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    margin-left: 8px;
+    cursor: pointer;
+  }
+  
+  .cart button:hover {
+    background: #c82333;
+  }
+  
+  @media (max-width: 600px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .cart li {
+      flex-direction: column;
+    }
+  }
+  

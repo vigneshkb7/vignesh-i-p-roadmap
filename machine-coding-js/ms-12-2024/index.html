@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <style>
+       body {
+  margin: 0;
+  padding: 0;
+  background: #f4f4f9;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 20px;
+  padding:0px 10px;
+  margin-right:20px
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.results-container {
+  width: 100%;
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.result-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.result-item:last-child {
+  border-bottom: none;
+}
+
+.highlight {
+  background: pink;
+  font-weight: bold;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+}
+
+button:disabled {
+  background: #ccc;
+}
+    </style>
+</head>
+
+<body>
+    <div class="search-container">
+        <div class="search-bar">
+          <input type="text" id="searchInput" class="search-input" placeholder="Enter search term..." />
+        </div>
+        <div class="results-container" id="resultsContainer"></div>
+        <div class="pagination" id="paginationContainer">
+          <button id="prevPage" disabled>Previous</button>
+          <span id="currentPage">Page 1</span>
+          <button id="nextPage">Next</button>
+        </div>
+      </div>
+    <script>
+       // Mock Data
+const resultsData = Array.from({ length: 50 }, (_, i) => ({
+  id: i + 1,
+  content: `This is a test result item ${i + 1}. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis nunc ut ex cursus, sed vestibulum turpis pellentesque.`
+}));
+
+// Pagination Variables
+const resultsPerPage = 5;
+let currentPage = 1;
+let currentSearchTerm = "";
+
+// DOM Elements
+const searchInput = document.getElementById("searchInput");
+const resultsContainer = document.getElementById("resultsContainer");
+const pagination = document.getElementById("paginationContainer");
+const prevPageButton = document.getElementById("prevPage");
+const nextPageButton = document.getElementById("nextPage");
+const currentPageSpan = document.getElementById("currentPage");
+
+// Search and Render Results
+function searchAndRender(searchTerm) {
+  currentSearchTerm = searchTerm.toLowerCase();
+  const filteredResults = resultsData.filter(item =>
+    item.content.toLowerCase().includes(currentSearchTerm)
+  );
+  renderResults(filteredResults);
+}
+
+// Render Results
+function renderResults(results) {
+  const totalPages = Math.ceil(results.length / resultsPerPage);
+  const start = (currentPage - 1) * resultsPerPage;
+  const end = start + resultsPerPage;
+  const paginatedResults = results.slice(start, end);
+
+  // Render Results
+  resultsContainer.innerHTML = paginatedResults
+    .map(result => {
+      const highlightedContent = result.content.replace(
+        new RegExp(currentSearchTerm, "gi"),
+        match => `<span class="highlight">${match}</span>`
+      );
+      return `<div class="result-item">${highlightedContent}</div>`;
+    })
+    .join("");
+
+  // Update Pagination
+  currentPageSpan.textContent = `Page ${currentPage}`;
+  prevPageButton.disabled = currentPage === 1;
+  nextPageButton.disabled = currentPage === totalPages;
+}
+
+// Event Listeners
+searchInput.addEventListener("input", e => {
+  currentPage = 1; // Reset to first page on new search
+  searchAndRender(e.target.value);
+});
+
+prevPageButton.addEventListener("click", () => {
+  currentPage--;
+  searchAndRender(searchInput.value);
+});
+
+nextPageButton.addEventListener("click", () => {
+  currentPage++;
+  searchAndRender(searchInput.value);
+});
+
+// Initial Render
+renderResults(resultsData);
+    </script>
+</body>
+
+</html>

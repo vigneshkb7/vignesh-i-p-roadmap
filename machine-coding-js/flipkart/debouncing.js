@@ -1,6 +1,6 @@
 // Debouncing in JavaScript is used to limit the rate at which a function is executed.
 // It delays the function call until a certain period has passed without the function being called again,
-//     which is useful in scenarios
+// which is useful in scenarios
 // like search inputs or resizing events to avoid excessive executions.
 
 function debounce(func, delay) {
@@ -23,4 +23,3 @@ const handleResize = debounce(() => {
 }, 500);
 
 window.addEventListener("resize", handleResize);
-kewoijfieoi;
