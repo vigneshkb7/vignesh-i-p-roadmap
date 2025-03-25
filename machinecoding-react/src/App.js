@@ -5,6 +5,9 @@ import Infinite from "./Infinite";
 import LoginForm from "./Form";
 import ProductGrid from "./Product";
 import Cart from "./Cart";
+import DragDropList from "./DragDropList";
+import InfiniteScroll from "./Infinites";
+import Todo from "./Todo";
 
 const totalMS = 10 * 1000;
 const interval = 1 * 1000;
@@ -12,7 +15,7 @@ const totalCycles = totalMS / interval;
 const progressMade = (interval / totalMS) * 100;
 
 function App() {
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(10);
   const timer = useRef();
   const cyclecompleted = useRef(0);
 
@@ -34,13 +37,17 @@ function App() {
   return (
     <div className="App">
       {/*Progress bar */}
-      {/* <Progress progress={progress} /> */}
+      <Progress progress={progress} />
       {/* Infinite scrolling */}
       {/* <Infinite /> */}
       {/* Custom form validation hook*/}
       <LoginForm />
-      {/* <ProductGrid /> */}
+      <ProductGrid />
       <Cart />
+      {/* <DragDropList /> */}
+      <InfiniteScroll />
+
+      <Todo />
     </div>
   );
 }
