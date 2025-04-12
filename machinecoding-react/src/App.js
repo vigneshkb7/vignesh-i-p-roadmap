@@ -8,6 +8,10 @@ import Cart from "./Cart";
 import DragDropList from "./DragDropList";
 import InfiniteScroll from "./Infinites";
 import Todo from "./Todo";
+import CommentSection from "./NestedComments";
+import FileExplorer from "./FileExplorer";
+import NestedCheckboxTree from "./NestedCheckBox";
+import Step from "./Stepper";
 
 const totalMS = 10 * 1000;
 const interval = 1 * 1000;
@@ -37,17 +41,20 @@ function App() {
   return (
     <div className="App">
       {/*Progress bar */}
-      <Progress progress={progress} />
+      {/* <Progress progress={progress} /> */}
       {/* Infinite scrolling */}
       {/* <Infinite /> */}
       {/* Custom form validation hook*/}
-      <LoginForm />
+      {/* <LoginForm />
       <ProductGrid />
-      <Cart />
+      <Cart /> */}
       {/* <DragDropList /> */}
-      <InfiniteScroll />
-
-      <Todo />
+      {/* <InfiniteScroll /> */}
+      {/* <CommentSection /> */}
+      {/* <FileExplorer /> */}
+      {/* <NestedCheckboxTree /> */}
+      <Step />
+      {/* <Todo /> */}
     </div>
   );
 }

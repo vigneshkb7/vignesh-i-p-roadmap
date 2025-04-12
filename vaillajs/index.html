@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notes App ✏️</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 50px auto;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #note-form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    #note-input {
+      flex: 1;
+      padding: 10px;
+      font-size: 1em;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .note {
+      background: #ffeaa7;
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .note textarea {
+      width: 100%;
+      background: transparent;
+      border: none;
+      resize: none;
+      font-size: 1em;
+      outline: none;
+    }
+
+    .note-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .note-actions button {
+      background: #d63031;
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .note-actions .edit-btn {
+      background: #0984e3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📝 Notes App</h1>
+    <form id="note-form">
+      <input type="text" id="note-input" placeholder="Write a note..." required />
+      <button type="submit">Add</button>
+    </form>
+    <div id="notes-container"></div>
+  </div>
+
+  <script>
+    const noteForm = document.getElementById('note-form');
+    const noteInput = document.getElementById('note-input');
+    const notesContainer = document.getElementById('notes-container');
+
+    let notes = JSON.parse(localStorage.getItem('notes')) || [];
+
+    function saveNotes() {
+      localStorage.setItem('notes', JSON.stringify(notes));
+    }
+
+    function renderNotes() {
+      notesContainer.innerHTML = '';
+      notes.forEach((note, index) => {
+        const noteEl = document.createElement('div');
+        noteEl.className = 'note';
+
+        const textarea = document.createElement('textarea');
+        textarea.value = note;
+        textarea.disabled = true;
+
+        const actions = document.createElement('div');
+        actions.className = 'note-actions';
+
+        const editBtn = document.createElement('button');
+        editBtn.textContent = 'Edit';
+        editBtn.className = 'edit-btn';
+        editBtn.onclick = () => {
+          textarea.disabled = !textarea.disabled;
+          if (textarea.disabled) {
+            notes[index] = textarea.value;
+            saveNotes();
+          }
+        };
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.onclick = () => {
+          notes.splice(index, 1);
+          saveNotes();
+          renderNotes();
+        };
+
+        actions.appendChild(editBtn);
+        actions.appendChild(deleteBtn);
+        noteEl.appendChild(textarea);
+        noteEl.appendChild(actions);
+
+        notesContainer.appendChild(noteEl);
+      });
+    }
+
+    noteForm.onsubmit = (e) => {
+      e.preventDefault();
+      const noteText = noteInput.value.trim();
+      if (noteText !== '') {
+        notes.push(noteText);
+        saveNotes();
+        renderNotes();
+        noteInput.value = '';
+      }
+    };
+
+    renderNotes();
+  </script>
+</body>
+</html>
