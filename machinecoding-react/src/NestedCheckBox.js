@@ -1,3 +1,5 @@
+// when a node has a children on clicking it should update the children based on checked or unchecked
+
 import React, { useState, useEffect } from "react";
 
 const data = {

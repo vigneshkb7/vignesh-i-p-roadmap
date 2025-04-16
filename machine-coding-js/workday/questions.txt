@@ -1,0 +1,20 @@
+Round 1:  System design Round
+
+Design a blogging platform
+
+To list the blogs writtent
+To create a new blog
+Blog recommendation engine
+
+Round 2:
+
+1. Git resolving merge conflicts
+2. Write a dockerfile for node js application
+3. Get data from the API and show the data according to author
+
+
+Round 3:
+
+1. Get the data from API for stock data for a particular symbol
+2. Then calculate the max profit
+

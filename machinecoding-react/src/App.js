@@ -12,6 +12,9 @@ import CommentSection from "./NestedComments";
 import FileExplorer from "./FileExplorer";
 import NestedCheckboxTree from "./NestedCheckBox";
 import Step from "./Stepper";
+import Search from "./Search";
+import BarChart from "./Bar";
+import QueueManager from "./QueueManager";
 
 const totalMS = 10 * 1000;
 const interval = 1 * 1000;
@@ -53,8 +56,11 @@ function App() {
       {/* <CommentSection /> */}
       {/* <FileExplorer /> */}
       {/* <NestedCheckboxTree /> */}
-      <Step />
+      {/* <Step /> */}
+      {/* <Search /> */}
+      {/* <BarChart /> */}
       {/* <Todo /> */}
+      <QueueManager />
     </div>
   );
 }

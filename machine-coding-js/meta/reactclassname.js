@@ -1,4 +1,5 @@
 function classNames(...args) {
+  console.log(args);
   let classes = [];
 
   for (let arg of args) {

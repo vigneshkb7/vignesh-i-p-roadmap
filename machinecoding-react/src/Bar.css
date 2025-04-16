@@ -1,0 +1,27 @@
+.bar-chart-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    border-left: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .bar-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .bar {
+    width: 30px;
+    transition: height 0.3s ease;
+  }
+  
+  .bar-label {
+    margin-top: 5px;
+    font-size: 12px;
+  }
+  

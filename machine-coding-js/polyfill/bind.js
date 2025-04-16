@@ -4,7 +4,7 @@ const objIntro = {
 };
 
 Function.prototype.myBind = function (context, args) {
-  console.log(args);
+  console.log(args, context, this);
   if (typeof this !== "function") {
     throw new Error(this, "invalid call");
   }
@@ -12,6 +12,7 @@ Function.prototype.myBind = function (context, args) {
   context.func = this;
 
   return function (...next) {
+    console.log(...args, ...next);
     context.func(...args, ...next);
   };
 };
