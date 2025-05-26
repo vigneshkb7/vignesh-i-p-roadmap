@@ -1,0 +1,15 @@
+{
+  "name": "create-custom-react",
+  "version": "1.0.0",
+  "description": "CLI to scaffold a React app with options",
+  "main": "bin/index.js",
+  "bin": {
+    "create-custom-react": "./bin/index.js"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^11.0.0",
+    "fs-extra": "^11.2.0",
+    "execa": "^8.0.1"
+  }
+}

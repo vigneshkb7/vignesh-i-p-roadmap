@@ -1,0 +1,8 @@
+{
+  "name": "create-react-app-lite",
+  "version": "1.0.0",
+  "bin": {
+    "create-react-app-lite": "./bin/index.js"
+  },
+  "type": "module"
+}
