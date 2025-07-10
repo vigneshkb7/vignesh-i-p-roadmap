@@ -15,6 +15,8 @@ import Step from "./Stepper";
 import Search from "./Search";
 import BarChart from "./Bar";
 import QueueManager from "./QueueManager";
+import EventApp from "./EventEmitter/Event";
+import GoogleSearch from "./GoogleSearch";
 
 const totalMS = 10 * 1000;
 const interval = 1 * 1000;
@@ -60,7 +62,9 @@ function App() {
       {/* <Search /> */}
       {/* <BarChart /> */}
       {/* <Todo /> */}
-      <QueueManager />
+      {/* <QueueManager /> */}
+      {/* <EventApp /> */}
+      <GoogleSearch />
     </div>
   );
 }
