@@ -57,9 +57,108 @@ if{
 
 }
 
-## context
+## this context
 
 context always refers to `this` in some particular part of the code
+
+1.Global scope
+
+console.log(this); // In browser: window, In Node: {}
+
+2. regular function (non -strict ) mode
+
+function show() {
+console.log(this);
+}
+show(); // window (in browser)
+
+regular function (strict ) mode
+
+'use strict';
+function show() {
+console.log(this);
+}
+show(); // undefined
+
+3. Arrow functions
+
+Arrow functions do not bind their own this. They inherit it from their lexical scope (where they are defined).
+
+const obj = {
+name: 'Vignesh',
+greet: () => {
+console.log(this.name);
+}
+};
+obj.greet(); // undefined (because arrow function inherits global `this`)
+
+#fix for this is
+
+const obj = {
+name: 'Vignesh',
+greet() {
+const arrow = () => {
+console.log(this.name); // now it's 'Vignesh'
+};
+arrow();
+}
+};
+obj.greet();
+
+4. Object Method
+
+const user = {
+name: "Vignesh",
+sayHi() {
+console.log(this.name);
+}
+};
+
+user.sayHi(); // Vignesh
+
+5. Detached methos will lose context
+
+const greet = user.sayHi;
+greet(); // undefined or error (depends on strict mode)
+
+## to fix
+
+const bound = user.sayHi.bind(user);
+bound(); // Vignesh
+
+6. Constructor function
+
+function Person(name) {
+this.name = name;
+}
+const p = new Person('Vignesh');
+console.log(p.name); // Vignesh
+
+With new, this refers to the newly created object.
+
+7. class method
+
+class User {
+constructor(name) {
+this.name = name;
+}
+
+greet() {
+console.log(this.name);
+}
+}
+
+const u = new User('Vignesh');
+u.greet(); // Vignesh
+
+similar to constructor function
+
+8. Event listeners DOM
+
+const btn = document.querySelector('button');
+btn.addEventListener('click', function () {
+console.log(this); // btn element
+});
 
 ## Execution context
 
