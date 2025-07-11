@@ -1,4 +1,6 @@
+------------------------------------------------------------
 ## Designing a react component library at scale
+------------------------------------------------------------
 
 Designing a **reusable React component library** for a **large-scale project** requires careful planning around **architecture, design consistency, scalability, and developer experience**.
 
@@ -168,7 +170,11 @@ If you're looking for speed and power:
 - Use [shadcn/ui](https://ui.shadcn.com/) for inspiration or wrapper
 - Use [Bit](https://bit.dev/) to publish and share components individually
 
+---
+
 ## architect a scalable and performant dashboard UI with complex data handling.
+
+---
 
 Great question! This is a common **frontend system design** interview scenario that tests your ability to architect a scalable and performant dashboard UI with complex data handling.
 
@@ -325,9 +331,13 @@ Keep API response **normalized** and pass it to both `ChartsPanel` and `Paginate
 
 ---
 
-Would you like me to turn this into a 1-pager interview cheat sheet or sample code structure?
+## Would you like me to turn this into a 1-pager interview cheat sheet or sample code structure?
+
+///////////////////////////
 
 ## File Systems Design
+
+## //////////////////////////
 
 To answer a **System Design interview question** like **"Design a File Directory System"**, structure your answer clearly and cover both **high-level architecture** and **detailed components** like APIs, storage, scalability, and performance.
 
