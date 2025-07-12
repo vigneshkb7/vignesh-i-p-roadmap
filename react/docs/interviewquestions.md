@@ -89,6 +89,9 @@ prefetch: downloads assets in idle time (used for future navigation)
 
 `
 
+13. A Higher-Order Component (HOC) is a function that takes a
+    component and returns a new component with enhanced behavior.
+
 React questions
 
 https://medium.com/frontend-army/top-25-reactjs-interview-questions-part-1-5b8e4878d09c
@@ -96,3 +99,5 @@ https://medium.com/frontend-army/top-25-reactjs-interview-questions-part-1-5b8e4
 https://medium.com/frontend-army/top-25-reactjs-interview-questions-part-2-00529edd657f
 
 https://medium.com/frontend-army/top-25-reactjs-interview-questions-part-3-561fefcc64f9
+
+https://medium.com/frontend-army/top-25-reactjs-interview-questions-part-4-7f3d7c3b4b0b
