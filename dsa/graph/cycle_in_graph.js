@@ -1,4 +1,5 @@
-// A cycle in a graph means you can start at a node, traverse edges, and return to the same node without repeating any edge.
+// A cycle in a graph means you can start at a node, traverse edges, and return to the
+// same node without repeating any edge.
 
 // Depending on the type of graph:
 

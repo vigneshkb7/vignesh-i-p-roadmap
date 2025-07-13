@@ -16,7 +16,8 @@ function dailyTemperatures(temperatures) {
     ) {
       console.log(i);
       // While there are elements in the stack and the current temperature is warmer than the temperature at the top of the stack
-      const topIndex = stack.pop(); // Pop the top index from the stack
+      const topIndex = stack.pop();
+      console.log("-pop index--", topIndex); // Pop the top index from the stack
       result[topIndex] = i - topIndex; // Calculate the difference in indices and store it in the result array
     }
     stack.push(i); // Push the current index onto the stack
