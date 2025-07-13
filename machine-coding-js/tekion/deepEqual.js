@@ -1,3 +1,5 @@
+// deep equal checks all the nested values in the object
+
 function deepEqual(a, b) {
   // Check if both values are strictly equal (handles primitives and identical references)
   if (a === b) return true;

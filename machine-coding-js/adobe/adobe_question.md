@@ -6,6 +6,10 @@
 6. useMemo, memo, useCallback
 7. SD: file directory system, components,api contract, scalabilty , performance
 8. LRU cache
-9. function currying 10. closure 11. CSR and SSR 12. Diffing 13. Redux
-10. Accordian
-11. React hooks
+9. function currying
+10. closure
+11. CSR and SSR
+12. Diffing
+13. Redux
+14. Accordian
+15. React hooks

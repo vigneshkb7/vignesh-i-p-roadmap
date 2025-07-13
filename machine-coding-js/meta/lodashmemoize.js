@@ -18,3 +18,16 @@ function memoize(fn) {
     return result;
   };
 }
+
+function memo(fn) {
+  console.log(fn);
+  return function (...args) {
+    console.log(args);
+  };
+}
+
+const d = () => {
+  return 1 + 2;
+};
+
+memo(d)("vignesh", "hai");
