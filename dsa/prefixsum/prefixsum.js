@@ -21,4 +21,5 @@ let ps = prefixSum([3, 5, 2, 7, 1]);
 
 console.log(ps);
 
+//sum(i,i) = prefixsum[j]- prefixsum(i-1)
 console.log(ps[3] - ps[1 - 1]);

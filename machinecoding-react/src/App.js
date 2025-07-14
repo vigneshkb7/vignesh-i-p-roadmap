@@ -56,7 +56,7 @@ function App() {
       {/* <DragDropList /> */}
       {/* <InfiniteScroll /> */}
       {/* <CommentSection /> */}
-      {/* <FileExplorer /> */}
+      <FileExplorer />
       {/* <NestedCheckboxTree /> */}
       {/* <Step /> */}
       {/* <Search /> */}

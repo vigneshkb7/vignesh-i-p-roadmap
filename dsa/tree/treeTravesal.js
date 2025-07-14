@@ -29,13 +29,7 @@ class Tree {
     }
     return currentNode;
   }
-  preOrderPrint(currentNode) {
-    if (currentNode !== null) {
-      console.log(currentNode.val);
-      this.preOrderPrint(currentNode.leftChild);
-      this.preOrderPrint(currentNode.rightChild);
-    }
-  }
+
   inOrderPrint(currentNode) {
     if (currentNode !== null) {
       this.inOrderPrint(currentNode.leftChild);
@@ -43,6 +37,15 @@ class Tree {
       this.inOrderPrint(currentNode.rightChild);
     }
   }
+
+  preOrderPrint(currentNode) {
+    if (currentNode !== null) {
+      console.log(currentNode.val);
+      this.preOrderPrint(currentNode.leftChild);
+      this.preOrderPrint(currentNode.rightChild);
+    }
+  }
+
   postOrderPrint(currentNode) {
     if (currentNode !== null) {
       this.postOrderPrint(currentNode.leftChild);

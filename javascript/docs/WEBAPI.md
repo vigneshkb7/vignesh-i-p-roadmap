@@ -22,6 +22,8 @@ const targetNode = document.getElementById("some-id");
 const config = { attributes: true, childList: true, subtree: true };
 
 // Callback function to execute when mutations are observed
+
+```
 const callback = (mutationList, observer) => {
 for (const mutation of mutationList) {
 if (mutation.type === "childList") {
@@ -31,6 +33,7 @@ console.log(`The ${mutation.attributeName} attribute was modified.`);
 }
 }
 };
+```
 
 // Create an observer instance linked to the callback function
 const observer = new MutationObserver(callback);
